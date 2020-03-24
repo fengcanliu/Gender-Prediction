@@ -1,0 +1,29 @@
+version: "1"
+
+services:
+  service:
+    build: ./service
+    expose:
+     - 5000
+    ports:
+     - 5000:5000
+    volumes:
+      - ./service: usr/src/app
+    environment:
+      -FLASK_ENV=development
+      -FLASK_APP=app.py
+      -FLASK_DEBUG=1
+  ui:
+    build: ./ui
+    expose:
+      - 3000
+    ports:
+      - 3000:3000
+    volumes:
+      - ./ui/src: /usr/src/app/src
+      - ./ui/public: /usr/app/public
+    links:
+      - ""
+
+
+
