@@ -1,4 +1,6 @@
 # Name-Prediction-App
+# Python backend and React frontend
+# Hosted in Docker Repo
 
 To run ui:
 
